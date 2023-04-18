@@ -4,7 +4,7 @@ Membros grupo: <br>
 * Adriele Santana Figueredo <br>
 * Caike dos Santos Rocha <br>
 * João Vítor Pamponet Esteves <br>
-* Klaus 
+* Klaus Erick Maciel Giudice
 
 # Automação por voz utilizando Arduino e Python.
 <hr>
