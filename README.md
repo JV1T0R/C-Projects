@@ -1,10 +1,6 @@
 Projeto desenvolvido para compor a nota do semestre da disciplina de Aplic. de Cloud, IoT e indústria 4.0 em Python.
 
-Membros grupo:
- Adriele
- Caike Rocha 
- João Vítor Pamponet Esteves
- Klaus
+Membros grupo: Adriele, Caike Rocha João Vítor Pamponet Esteves, Klaus
 
 # Automação por voz utilizando Arduino e Python.
 <hr>
