@@ -1,8 +1,8 @@
 Projeto desenvolvido para compor a nota do semestre da disciplina de Aplic. de Cloud, IoT e indústria 4.0 em Python.
 
 Membros grupo: <br>
-* Adriele <br>
-* Caike Rocha <br>
+* Adriele Santana Figueredo <br>
+* Caike dos Santos Rocha <br>
 * João Vítor Pamponet Esteves <br>
 * Klaus 
 
