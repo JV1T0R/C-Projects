@@ -1,4 +1,3 @@
-Código Arduino
 #include <Servo.h>
 #define servo 10
 
