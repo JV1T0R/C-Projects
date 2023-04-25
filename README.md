@@ -7,7 +7,6 @@ Membros grupo: <br>
 * Klaus Erick Maciel Giudice
 
 # Automação por voz utilizando Arduino e Python.
-<hr>
 
 ## Ideia do projeto
 Pensando em como criar algo inovador utilizando o conceito de internet das coisas, chegamos a conclusão de que seria inetressante produzir algo que pudesse tornar as coisas "inteligentes" de forma barata simples e prática.
