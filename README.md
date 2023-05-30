@@ -13,15 +13,15 @@ Pensando em como criar algo inovador utilizando o conceito de internet das coisa
 O projeto consiste basicamente em uma placa de arduino ligada a um pequeno motor e a um computador rodando um scrip em python que faz constantes leituras de voz. Através
 deste hardware é possível automatizar algo por comando de voz acoplando o motor a um botão ou interruptor.
 
-## Componentes utilizados:
+## Componentes utilizados
 Para a construção do hardware do hardware deste projeto os seguintes componentes: <br>
 
 1x Placa Arduino UNO R3 <br>
-<img src="https://github.com/JV1T0R/Arduino-project/assets/100170271/68994828-bd5a-47d9-a9f8-e302fb19282b" width="300px" height="300px">
+<img src="" width="300px" height="300px">
 <br>
 
 1x Cabo USB <br>
-<img src="" width="300px" height="300px">
+<img src="https://github.com/JV1T0R/Arduino-project/assets/100170271/bf40577e-5c33-4478-8b71-47547ab27697" width="300px" height="300px">
 <br>
   
 3x Jumpers <br>
