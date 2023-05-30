@@ -16,11 +16,21 @@ deste hardware é possível automatizar algo por comando de voz acoplando o moto
 ## Componentes utilizados:
 Para a construção do hardware do hardware deste projeto os seguintes componentes: <br>
 
-3x Jumpers <br>
-1x Micro Servo Motor 9g Sg90
+
+
 
 
 <div align="center">
   1x Placa Arduino UNO R3 <br>
   <img src="https://github.com/JV1T0R/Arduino-project/assets/100170271/68994828-bd5a-47d9-a9f8-e302fb19282b" width="500px" height="500px">
+  <br>
+  
+  3x Jumpers <br>
+  <img src="https://github.com/JV1T0R/Arduino-project/assets/100170271/27b63f6a-9e0c-4086-bd06-c8a1962cd6c0" width="500px" height="500px">
+  <br>
+  
+  1x Micro Servo Motor 9g Sg90 <br>
+  <img src="" width="500px" height="500px">
+  <br>
+  
 </div>
