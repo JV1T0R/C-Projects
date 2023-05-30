@@ -19,6 +19,10 @@ Para a construção do hardware do hardware deste projeto os seguintes component
 1x Placa Arduino UNO R3 <br>
 <img src="https://github.com/JV1T0R/Arduino-project/assets/100170271/68994828-bd5a-47d9-a9f8-e302fb19282b" width="300px" height="300px">
 <br>
+
+1x Cabo USB <br>
+<img src="" width="300px" height="300px">
+<br>
   
 3x Jumpers <br>
 <img src="https://github.com/JV1T0R/Arduino-project/assets/100170271/27b63f6a-9e0c-4086-bd06-c8a1962cd6c0" width="300px" height="300px">
