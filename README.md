@@ -16,5 +16,6 @@ deste hardware é possível automatizar algo por comando de voz acoplando o moto
 ## Componentes utilizados:
 Para a construção do hardware do hardware deste projeto os seguintes componentes: <br>
 1x Placa Arduino UNO R3 <br>
+<img src="(https://github.com/JV1T0R/Arduino-project/assets/100170271/866c8b83-81d5-479a-96a3-4e74aba16cb0)" width="500px">
 3x Jumpers <br>
 1x Micro Servo Motor 9g Sg90
