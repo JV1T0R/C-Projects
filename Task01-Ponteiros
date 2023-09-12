@@ -1,0 +1,117 @@
+/* QUESTÃO 1 */
+
+#include <stdio.h>
+
+int main()
+{
+    int inteiro = 5;
+    int *ponteiro_inteiro;
+    ponteiro_inteiro = &inteiro;
+    
+    printf("A variável inteira original é: %d\n", inteiro);
+    
+    *ponteiro_inteiro = 10;
+    
+    printf("O novo valor da variável inteira é: %d\n", inteiro);
+    
+    printf("\n");
+    
+    float real = 2.5;
+    float *ponteiro_real;
+    ponteiro_real = &real;
+    
+    printf("A variável real original é: %f\n", real);
+    
+    *ponteiro_real = 5.0;
+    
+    printf("O novo valor da variável real é: %f\n", real);
+    
+    printf("\n");
+    
+    char caractere = 'C';
+    char *ponteiro_caractere;
+    ponteiro_caractere = &caractere;
+    
+    printf("O caractere original é: %c\n", caractere);
+    
+    *ponteiro_caractere = 'N';
+    
+    printf("O novo caractere é: %c\n", caractere);
+}
+
+
+/*QUESTÃO 2*/
+
+#include <stdio.h>
+
+int main()
+{
+    int v1;
+    printf("Digite um número inteiro: ");
+    scanf("%d", &v1);
+    
+    int *ponteiro_v1 = &v1;
+
+    int v2;
+    printf("Digite um número inteiro: ");
+    scanf("%d", &v2);
+    
+    int *ponteiro_v2 = &v2;
+    
+    if (*ponteiro_v1 > *ponteiro_v2) {
+        printf("O maior valor é: %d\n", *ponteiro_v1);
+    } 
+    
+    if (*ponteiro_v1 < *ponteiro_v2){
+        printf("O maior valor é: %d\n", *ponteiro_v2);
+    }
+    
+    else {
+        printf("Os valores são iguais");
+    }
+}
+
+
+/*QUESTÃO 3*/
+#include <stdio.h>
+
+void trocarValores(int *a, int *b) {
+    int temp = *a;  
+    *a = *b;        
+    *b = temp;      
+}
+
+int main() {
+    int A = 5;
+    int B = 7;
+
+    printf("Valores iniciais: A = %d, B = %d\n", A, B);
+
+    trocarValores(&A, &B);
+
+    printf("Valores após a troca: A = %d, B = %d\n", A, B);
+
+    return 0;
+}
+
+
+/*QUESTÃO 4*/
+
+#include <stdio.h>
+
+int dobreEsome(int *a, int *b) {
+    *a = *a * 2; 
+    *b = *b * 2;  
+    return *a + *b;  
+}
+
+int main() {
+    int A = 10;
+    int B = 20;
+
+    int resultado = dobreEsome(&A, &B);
+
+    printf("O resultado da soma do dobro das variáveis é: %d\n", resultado);
+
+    return 0;
+}
