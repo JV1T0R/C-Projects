@@ -40,7 +40,7 @@ int main()
 }
 
 
-/*QUESTÃO 2*/
+/* QUESTÃO 2 */
 
 #include <stdio.h>
 
@@ -72,7 +72,7 @@ int main()
 }
 
 
-/*QUESTÃO 3*/
+/* QUESTÃO 3 */
 #include <stdio.h>
 
 void trocarValores(int *a, int *b) {
@@ -95,7 +95,7 @@ int main() {
 }
 
 
-/*QUESTÃO 4*/
+/* QUESTÃO 4 */
 
 #include <stdio.h>
 
