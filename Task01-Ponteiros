@@ -41,7 +41,7 @@ int main()
 
 
 /* QUESTÃO 2 */
-
+/*  
 #include <stdio.h>
 
 int main()
@@ -70,9 +70,11 @@ int main()
         printf("Os valores são iguais");
     }
 }
+*/
 
 
 /* QUESTÃO 3 */
+/*
 #include <stdio.h>
 
 void trocarValores(int *a, int *b) {
@@ -91,10 +93,11 @@ int main() {
 
     printf("Valores após a troca: A = %d, B = %d\n", A, B);
 }
+*/
 
 
 /* QUESTÃO 4 */
-
+/*
 #include <stdio.h>
 
 int dobreEsome(int *a, int *b) {
@@ -111,3 +114,4 @@ int main() {
 
     printf("O resultado da soma do dobro das variáveis é: %d\n", resultado);
 }
+*/
