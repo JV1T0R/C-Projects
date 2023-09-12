@@ -90,8 +90,6 @@ int main() {
     trocarValores(&A, &B);
 
     printf("Valores após a troca: A = %d, B = %d\n", A, B);
-
-    return 0;
 }
 
 
@@ -112,6 +110,4 @@ int main() {
     int resultado = dobreEsome(&A, &B);
 
     printf("O resultado da soma do dobro das variáveis é: %d\n", resultado);
-
-    return 0;
 }
