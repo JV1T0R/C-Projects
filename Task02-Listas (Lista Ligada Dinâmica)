@@ -1,0 +1,230 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct Compromisso {
+    char data[11];  // Data no formato "dd/mm/yyyy"
+    char descricao[100];
+    struct Compromisso *prox;
+};
+
+void inicializarLista(struct Compromisso **lista) {
+    *lista = NULL;
+    printf("Lista inicializada.\n");
+}
+
+int tamanhoLista(struct Compromisso *lista) {
+    int tamanho = 0;
+    struct Compromisso *atual = lista;
+    while (atual != NULL) {
+        tamanho++;
+        atual = atual->prox;
+    }
+    return tamanho;
+}
+
+void exibirCompromissos(struct Compromisso *lista) {
+    if (lista == NULL) {
+        printf("A lista de compromissos está vazia.\n");
+    } else {
+        printf("Compromissos na lista:\n");
+        struct Compromisso *atual = lista;
+        while (atual != NULL) {
+            printf("Data: %s, Descrição: %s\n", atual->data, atual->descricao);
+            atual = atual->prox;
+        }
+    }
+}
+
+void consultarCompromisso(struct Compromisso *lista, char data[]) {
+    struct Compromisso *atual = lista;
+    int encontrado = 0;
+    while (atual != NULL) {
+        if (strcmp(atual->data, data) == 0) {
+            printf("Compromisso encontrado: Data: %s, Descrição: %s\n", atual->data, atual->descricao);
+            encontrado = 1;
+        }
+        atual = atual->prox;
+    }
+    if (!encontrado) {
+        printf("Compromisso não encontrado para a data especificada.\n");
+    }
+}
+
+void inserirCompromisso(struct Compromisso **lista, char data[], char descricao[]) {
+    struct Compromisso *novo = (struct Compromisso *)malloc(sizeof(struct Compromisso));
+    if (novo == NULL) {
+        printf("Falha na alocação de memória. Não é possível inserir o compromisso.\n");
+        return;
+    }
+
+    strcpy(novo->data, data);
+    strcpy(novo->descricao, descricao);
+    novo->prox = *lista;
+    *lista = novo;
+    printf("Compromisso inserido com sucesso.\n");
+}
+
+void alterarCompromisso(struct Compromisso *lista, char data[], char novaDescricao[]) {
+    struct Compromisso *atual = lista;
+    int encontrado = 0;
+    while (atual != NULL) {
+        if (strcmp(atual->data, data) == 0) {
+            strcpy(atual->descricao, novaDescricao);
+            printf("Compromisso alterado com sucesso.\n");
+            encontrado = 1;
+        }
+        atual = atual->prox;
+    }
+    if (!encontrado) {
+        printf("Compromisso não encontrado para a data especificada. Nada foi alterado.\n");
+    }
+}
+
+void excluirCompromisso(struct Compromisso **lista, char data[]) {
+    struct Compromisso *anterior = NULL;
+    struct Compromisso *atual = *lista;
+    int encontrado = 0;
+    while (atual != NULL) {
+        if (strcmp(atual->data, data) == 0) {
+            if (anterior != NULL) {
+                anterior->prox = atual->prox;
+            } else {
+                *lista = atual->prox;
+            }
+            free(atual);
+            printf("Compromisso excluído com sucesso.\n");
+            encontrado = 1;
+            break;
+        }
+        anterior = atual;
+        atual = atual->prox;
+    }
+    if (!encontrado) {
+        printf("Compromisso não encontrado para a data especificada. Nada foi excluído.\n");
+    }
+}
+
+void reinicializarLista(struct Compromisso **lista) {
+    while (*lista != NULL) {
+        struct Compromisso *temp = *lista;
+        *lista = (*lista)->prox;
+        free(temp);
+    }
+    printf("Lista de compromissos reinicializada.\n");
+}
+
+void salvarLista(struct Compromisso *lista) {
+    FILE *arquivo = fopen("agenda.txt", "w");
+    if (arquivo == NULL) {
+        printf("Não foi possível abrir o arquivo para salvar a lista.\n");
+        return;
+    }
+    struct Compromisso *atual = lista;
+    while (atual != NULL) {
+        fprintf(arquivo, "%s;%s\n", atual->data, atual->descricao);
+        atual = atual->prox;
+    }
+    fclose(arquivo);
+    printf("Lista de compromissos salva no arquivo 'agenda.txt'.\n");
+}
+
+void carregarLista(struct Compromisso **lista) {
+    FILE *arquivo = fopen("agenda.txt", "r");
+    if (arquivo == NULL) {
+        printf("Não foi possível abrir o arquivo para carregar a lista.\n");
+        return;
+    }
+    reinicializarLista(lista);
+    char linha[120];
+    while (fgets(linha, sizeof(linha), arquivo) != NULL) {
+        char data[11];
+        char descricao[100];
+        if (sscanf(linha, "%10[^;];%99[^\n]", data, descricao) == 2) {
+            inserirCompromisso(lista, data, descricao);
+        }
+    }
+    fclose(arquivo);
+    printf("Lista de compromissos carregada do arquivo 'agenda.txt'.\n");
+}
+
+int main() {
+    struct Compromisso *listaCompromissos = NULL;
+
+    int opcao;
+    char data[11];
+    char descricao[100];
+
+    printf("Sistema de Agenda de Compromissos\n");
+
+    do {
+        printf("\nOpções:\n");
+        printf("1. Inicializar lista de compromissos\n");
+        printf("2. Verificar tamanho da lista\n");
+        printf("3. Exibir compromissos\n");
+        printf("4. Consultar compromisso\n");
+        printf("5. Inserir compromisso\n");
+        printf("6. Alterar compromisso\n");
+        printf("7. Excluir compromisso\n");
+        printf("8. Reinicializar lista de compromissos\n");
+        printf("9. Salvar lista em arquivo\n");
+        printf("10. Carregar lista do arquivo\n");
+        printf("0. Sair\n");
+
+        printf("Escolha uma opção: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                inicializarLista(&listaCompromissos);
+                break;
+            case 2:
+                printf("Tamanho da lista de compromissos: %d\n", tamanhoLista(listaCompromissos));
+                break;
+            case 3:
+                exibirCompromissos(listaCompromissos);
+                break;
+            case 4:
+                printf("Digite a data do compromisso que deseja consultar (dd/mm/yyyy): ");
+                scanf("%s", data);
+                consultarCompromisso(listaCompromissos, data);
+                break;
+            case 5:
+                printf("Digite a data do compromisso (dd/mm/yyyy): ");
+                scanf("%s", data);
+                printf("Digite a descrição do compromisso: ");
+                scanf(" %[^\n]s", descricao);
+                inserirCompromisso(&listaCompromissos, data, descricao);
+                break;
+            case 6:
+                printf("Digite a data do compromisso que deseja alterar (dd/mm/yyyy): ");
+                scanf("%s", data);
+                printf("Digite a nova descrição do compromisso: ");
+                scanf(" %[^\n]s", descricao);
+                alterarCompromisso(listaCompromissos, data, descricao);
+                break;
+            case 7:
+                printf("Digite a data do compromisso que deseja excluir (dd/mm/yyyy): ");
+                scanf("%s", data);
+                excluirCompromisso(&listaCompromissos, data);
+                break;
+            case 8:
+                reinicializarLista(&listaCompromissos);
+                break;
+            case 9:
+                salvarLista(listaCompromissos);
+                break;
+            case 10:
+                carregarLista(&listaCompromissos);
+                break;
+            case 0:
+                printf("Saindo do programa. Obrigado!\n");
+                reinicializarLista(&listaCompromissos);
+                break;
+            default:
+                printf("Opção inválida. Por favor, escolha uma opção válida.\n");
+        }
+    } while (opcao != 0);
+
+    return 0;
+}
